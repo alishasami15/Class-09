@@ -1,12 +1,14 @@
 from deep_translator import GoogleTranslator
 
 def translate_text(text):
-    translated = GoogleTranslator(source='auto', target='en').translate(text)
+    translated = GoogleTranslator(source='en', target='ur').translate(text)
     return translated
 
 # User Input
-user_input = input("Roman Urdu mein likhein:")
+user_input = input("Please type in English: ").strip()
 
-# Translation
-translation = translate_text(user_input)
-print("English Translation:\n", translation)
+if user_input:
+    translation = translate_text(user_input)
+    print("Urdu Translation:\n", translation)
+else:
+    print("Please type some text.")
